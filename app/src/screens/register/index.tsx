@@ -34,7 +34,7 @@ const Register = () => {
         return
       }
 
-      if(firstName.trim().split(' ').length > 0){
+      if(firstName.trim().split(' ').length - 1 > 0){
         setLoader(false)
         setErrorMsg('Please add only one name in the name field')
         return
