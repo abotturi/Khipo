@@ -3,7 +3,7 @@
 ## Desenvolvido por Alan Botturi
 
 ### Start
-Primeiro precisamos inicioar nosso servidor, para isso abra o terminal e navegue para dentro da pasta **./api**
+Primeiro precisamos iniciar nosso servidor, para isso abra o terminal e navegue para dentro da pasta **./api**
 
  - ## Back-End
    - Instalar o docker desktop e iniciar
