@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import './style.css'
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Box from '@mui/material/Box';
 import { LoadingButton } from '@mui/lab';
 import Typography from '@mui/material/Typography';
@@ -11,16 +9,6 @@ import axios from '../../axios/axios';
 import IconButton from '@mui/material/IconButton';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-
-
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
 
 
 const Register = () => {
@@ -40,9 +28,15 @@ const Register = () => {
       setLoader(true)
       setErrorMsg('')
 
-      if(!firstName || !email || !password){
+      if(!firstName.trim() || !email || !password){
         setLoader(false)
         setErrorMsg('Please enter all mandatory fields')
+        return
+      }
+
+      if(firstName.trim().split(' ').length > 0){
+        setLoader(false)
+        setErrorMsg('Please add only one name in the name field')
         return
       }
 
@@ -53,8 +47,8 @@ const Register = () => {
       }
 
       await axios.post('/user', {
-        first_name: firstName,
-        last_name: lastName ? lastName : null,
+        first_name: firstName.trim(),
+        last_name: lastName.trim() ? lastName.trim() : null,
         email,
         password
       })
