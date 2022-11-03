@@ -16,7 +16,7 @@ Primeiro precisamos iniciar nosso servidor, para isso abra o terminal e navegue 
    - Depois o comando ```npm run build``` para rodar as migrates do prisma
    - Depois podemos iniciar nosso servidor dando o camando ```npm run start```
 
-Com o servidor iniciado podemos iniciar nossa aplicação, bastar entrar na pasta **./app**
+Com o servidor iniciado podemos iniciar nossa aplicação, bastar entrar na pasta **./app** pelo cmd
 
  - ## Front-end
    - Iniciar o Back-end
